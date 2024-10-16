@@ -96,7 +96,7 @@ url = { workspace = true }
 
 [features]
 default = ["runtime"]
-runtime = ["move-vm-runtime", "aptos-experimental-runtimes"]
+runtime = ["move-vm-runtime", "aptos-experimental-runtimes", "aptos-dkg/runtime"]
 fuzzing = ["proptest", "proptest-derive", "aptos-crypto/fuzzing", "move-core-types/fuzzing", "arbitrary"]
 
 [[bench]]

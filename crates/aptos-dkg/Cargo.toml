@@ -35,7 +35,7 @@ static_assertions = { workspace = true }
 num_cpus = { workspace = true }
 
 [features]
-default = ["runtime"]
+default = []
 assert-private-keys-not-cloneable = []
 fuzzing = []
 runtime = ["aptos-runtimes"]
