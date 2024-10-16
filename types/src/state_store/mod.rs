@@ -10,6 +10,7 @@ use crate::{
     transaction::Version,
 };
 use aptos_crypto::HashValue;
+#[cfg(feature = "runtime")]
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use arr_macro::arr;
 use bytes::Bytes;
@@ -102,6 +103,7 @@ pub fn create_empty_sharded_state_updates() -> ShardedStateUpdates {
     arr![HashMap::new(); 16]
 }
 
+#[cfg(feature = "runtime")]
 pub fn combine_or_add_sharded_state_updates(
     lhs: &mut Option<ShardedStateUpdates>,
     rhs: ShardedStateUpdates,
@@ -113,6 +115,7 @@ pub fn combine_or_add_sharded_state_updates(
     }
 }
 
+#[cfg(feature = "runtime")]
 pub fn combine_sharded_state_updates(lhs: &mut ShardedStateUpdates, rhs: ShardedStateUpdates) {
     use rayon::prelude::*;
 

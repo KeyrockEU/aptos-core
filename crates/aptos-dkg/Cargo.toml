@@ -8,7 +8,7 @@ license = { workspace = true }
 anyhow = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-crypto-derive = { workspace = true }
-aptos-runtimes = { workspace = true }
+aptos-runtimes = { workspace = true, optional = true }
 bcs =  { workspace = true }
 blst = { workspace = true }
 blstrs = { workspace = true }
@@ -35,8 +35,10 @@ static_assertions = { workspace = true }
 num_cpus = { workspace = true }
 
 [features]
+default = ["runtime"]
 assert-private-keys-not-cloneable = []
 fuzzing = []
+runtime = ["aptos-runtimes"]
 
 [[bench]]
 name = "crypto"

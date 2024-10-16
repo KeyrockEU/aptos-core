@@ -8,6 +8,7 @@ use crate::on_chain_config::{
 };
 use move_binary_format::deserializer::DeserializerConfig;
 use move_bytecode_verifier::VerifierConfig;
+#[cfg(feature = "runtime")]
 use move_vm_runtime::config::VMConfig;
 use move_vm_types::loaded_data::runtime_types::TypeBuilder;
 use once_cell::sync::OnceCell;
@@ -72,6 +73,7 @@ pub fn aptos_prod_verifier_config(features: &Features) -> VerifierConfig {
     }
 }
 
+#[cfg(feature = "runtime")]
 pub fn aptos_prod_vm_config(
     features: &Features,
     timed_features: &TimedFeatures,
